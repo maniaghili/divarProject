@@ -34,9 +34,11 @@ const showModalOfCities = () => {
    cityModalOverlay?.addEventListener('click',()=>{
     cityModal.style.visibility = 'none'
     cityModal.style.opacity = '0'
+    cityModalOverlay.style.display = 'none'
    })
 
     headerCity?.addEventListener('click',(e)=>{
+      cityModalOverlay.style.display = 'block'
         e.preventDefault()
         getModalCities().then((res)=>{
           showCitiesInModal(res.provinces)
