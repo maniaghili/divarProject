@@ -55,7 +55,22 @@ const hideModal = (id,className) => {
   const elementID = document.querySelector(`#${id}`)
   elementID.classList.remove(className)
   
-  }
+}
+
+const pagination = (href,totalItems,itemsPrepages) => {
+  const parentElement = document.querySelector(".pagination-items");
+  let page = getUrlParam('page')
+  !page ? page = 1 : '' 
+ let currentItems = totalItems / itemsPrepages
+ 
+ for(let i =1 ; currentItems+1>i ; i++){
+  parentElement.insertAdjacentHTML('beforeend',`
+    <li>
+    <a href="${href}?page=${i}" class="${page == i?`active`:''}">${i}</a>
+    </li>
+    `)
+ }
+}
 
 
 export { getCityCookie,
@@ -65,4 +80,5 @@ export { getCityCookie,
   setUrlParam,
   getUrlParam,
   showModal,
+  pagination,
 hideModal}

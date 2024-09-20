@@ -1,17 +1,19 @@
 import { getToken } from "../../funcs/share.js";
 import { realTime } from "../../funcs/postsfuncs.js";
+import { getUrlParam } from "../../funcs/util.js";
 const token = getToken()
 let posts = null
 const getBookmarks = async () => {
+  let page = getUrlParam('page')
+  !page ? page = 1 : ''
     
-    
-    const res = await fetch(`https://divarapi.liara.run/v1/user/bookmarks`, {
+    const res = await fetch(`https://divarapi.liara.run/v1/user/bookmarks?page=${page}&limit=2`, {
         headers: {
           Authorization: `Bearer ${JSON.parse(token)}`,
         },
       });
       const response = await res.json();
-     posts = response.data.posts;
+     posts = response.data;
     return posts
 }
 
