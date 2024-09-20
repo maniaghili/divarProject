@@ -8,7 +8,7 @@ import { globalSearchInfos ,
     showPanelLinks,
     getToken
     } from "./funcs/share.js";
-import { showModal,hideModal, getLocalStorage,setUrlParam } from "./funcs/util.js";
+import { showModal,hideModal, getLocalStorage,setUrlParam, logOut } from "./funcs/util.js";
 import { getPostCategories ,removeParamFromUrl} from "./funcs/postsfuncs.js";
 import { sendUserPhone,loginUser,sendNewCode} from "./funcs/auth.js";
 
@@ -34,6 +34,7 @@ const loginBtn = document.querySelector('.login_btn')
 const reqNewCodeBtn = document.querySelector(".req_new_code_btn");
 const createPostBtn = document.querySelector('.create_post_btn');
 
+
 createPostBtn?.addEventListener('click',(e)=>{
   e.preventDefault()
   let token = getToken()
@@ -51,6 +52,8 @@ reqNewCodeBtn?.addEventListener('click',(e)=>{
   sendNewCode()
  
 })
+
+
 
 
 loginBtn?.addEventListener('click',(e)=>{
@@ -73,7 +76,12 @@ loginModalIcon?.addEventListener('click',()=>{
 showCityNameOnHeader()
 window.addEventListener('load',()=>{
 
-  showPanelLinks()
+
+
+  showPanelLinks();
+  
+
+
     getPostCategories().then((s)=>{
        let mainCateories = s.data.categories
       
@@ -171,8 +179,7 @@ window.setUrlParam = setUrlParam
   })
 
    
-
-
+ 
 
 })
 

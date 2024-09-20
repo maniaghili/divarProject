@@ -38,6 +38,7 @@ const loginUser =async () => {
       loginModal.classList.remove('login-modal--active')
      
       alert('لاگین با موفقیت انجام شد')
+      location.reload()
     } else if (res.status === 400) {
       loading.classList.remove("active-login-loader");
       otpInput.value = "";

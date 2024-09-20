@@ -1,5 +1,5 @@
 import { showPosts,getPosts } from "./postsfuncs.js";
-import { setUrlParam ,getLocalStorage,setLocalStorage} from "./util.js";
+import { setUrlParam ,getLocalStorage,setLocalStorage,logOut} from "./util.js";
 import { isLoginn } from "./postDetalesfuncs.js";
 const globalSearchInfos = (value) => {
 
@@ -301,6 +301,11 @@ const showPanelLinks = async () => {
               </li>
           `
         );
+        const logoutLink = document.querySelector('#login_btn');
+  logoutLink.addEventListener('click',()=>{
+ 
+    logOut()
+  })
       });
     } else {
 
@@ -314,19 +319,19 @@ const showPanelLinks = async () => {
             </span>
           </li>
           <li class="header__left-dropdown-item">
-            <div class="header__left-dropdown-link" href="#">
+            <div class="header__left-dropdown-link">
               <i class="header__left-dropdown-icon bi bi-bookmark"></i>
               نشان ها
             </div>
           </li>
           <li class="header__left-dropdown-item">
-            <div class="header__left-dropdown-link" href="#">
+            <div class="header__left-dropdown-link">
               <i class="header__left-dropdown-icon bi bi-journal"></i>
               یادداشت ها
             </div>
           </li>
           <li class="header__left-dropdown-item">
-            <div class="header__left-dropdown-link" href="#">
+            <div class="header__left-dropdown-link">
               <i class="header__left-dropdown-icon bi bi-clock-history"></i>
               بازدید های اخیر
             </div>
@@ -336,13 +341,10 @@ const showPanelLinks = async () => {
     dropDown.addEventListener('click',()=>{
       loginModal.classList.add('login-modal--active')
     })
+    
   }
  
 }}
-
-// create new post funcs✌
-
-
 
 
 export {globalSearchInfos,

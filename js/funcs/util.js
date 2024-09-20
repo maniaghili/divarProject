@@ -72,9 +72,15 @@ const pagination = (href,totalItems,itemsPrepages) => {
  }
 }
 
+const logOut = () => {
+  localStorage.removeItem('divar')
+  location.href = '/index.html'
+}
+
 
 export { getCityCookie,
   getLocalStorage,
+  logOut,
   setCityNameCookie,
   setLocalStorage,
   setUrlParam,
