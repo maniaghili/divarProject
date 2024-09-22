@@ -33,7 +33,11 @@ const showUserPosts = (posts) => {
         postsContainer.insertAdjacentHTML(
           "beforeend",
           `
-              <a class="post" href="/pages/post.html?id=${post._id}">
+          ${
+            post.status === "pending" || post.status === "rejected"? `
+            <a class="post" href="/pages/userpanel/posts/preview.html?id=${post._id}">
+            `:`<a class="post" href="/pages/post.html?id=${post._id}">`}
+              
                   <div class="post-info">
                   ${
                     post.pics.length
