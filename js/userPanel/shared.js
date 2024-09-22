@@ -14,7 +14,7 @@ window.addEventListener('load',()=>{
          })
          
         }else{
-            location.href = '/frontend/pages/posts.html'
+            location.href = '/pages/posts.html'
         }
         
     })

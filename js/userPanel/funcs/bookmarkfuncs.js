@@ -6,7 +6,7 @@ let posts = null
 const getBookmarks = async () => {
   let page = getUrlParam('page')
   !page ? page = 1 : ''
-    
+      
     const res = await fetch(`https://divarapi.liara.run/v1/user/bookmarks?page=${page}&limit=2`, {
         headers: {
           Authorization: `Bearer ${JSON.parse(token)}`,
