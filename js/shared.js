@@ -39,7 +39,7 @@ createPostBtn?.addEventListener('click',(e)=>{
   e.preventDefault()
   let token = getToken()
   if(token){
-    location.href = '/frontend/pages/new.html'
+    location.href = '/pages/new.html'
   }else{
     loginModal.classList.add('login-modal--active')
   }

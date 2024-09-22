@@ -49,7 +49,7 @@ const generatePost = (posts)=>{
                 <div class="post">
                     <div>
                         <div>
-                        <a class="title" href="/frontend/pages/post.html?id=${post._id}">${
+                        <a class="title" href="/pages/post.html?id=${post._id}">${
                 post.title
               }</a>
                         <div>
