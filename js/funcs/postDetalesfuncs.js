@@ -1,5 +1,5 @@
 import { realTime } from "./postsfuncs.js"
-import { getLocalStorage, getUrlParam } from "./util.js"
+import { getLocalStorage, getUrlParam, setLocalStorage } from "./util.js"
 
 
 const postTitle = document.querySelector("#post-title");
@@ -63,8 +63,7 @@ const showPostDetales = (post)=>{
   
   getPostAndNoteDetales(post._id).then((note)=>{
     
-    console.log(note);
-
+    
     if(note.data.post.bookmarked){
       bookMark = 'red'
       postBtnIcon.style.color = 'red'
@@ -309,4 +308,19 @@ const delBookmark = async (id)=>{
   
   
 }
-export{getPostDetales,showPostDetales,isLoginn}
+
+const saveRecentSeen = (pos) => {
+  
+  const recentSeens = getLocalStorage('recent-seen')
+  console.log(recentSeens);
+  
+  let findPost = recentSeens?.some(post => post === pos._id)
+  if(recentSeens && !findPost){
+    setLocalStorage('recent-seen',[...recentSeens,pos._id])
+  }else{
+    if(!recentSeens) {
+    setLocalStorage('recent-seen',[pos._id])
+    }
+  }
+}
+export{getPostDetales,showPostDetales,isLoginn,saveRecentSeen}
