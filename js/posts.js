@@ -30,7 +30,7 @@ window.addEventListener('load',()=>{
       
       posts = allPosts.data.posts
       
-      showPosts([...posts])
+      
       let ll = showPostsWithFilter()
    showPosts(ll)
   })
@@ -45,8 +45,7 @@ window.addEventListener('load',()=>{
       })
       
       
-      posts = allPosts.data.posts
-      showPosts([...posts])
+     
   })
   let ll = showPostsWithFilter()
    showPosts(ll)
