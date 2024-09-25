@@ -15,7 +15,7 @@ categoryInfo.insertAdjacentHTML('beforeend',
 `)
 thisCategory.articles.forEach((article)=>{
     articlesContainer.insertAdjacentHTML('beforeend',`
-            <a href="/frontend/pages/support/article.html?id=${
+            <a href="/divarProject/pages/support/article.html?id=${
               article._id
             }" class="article">
                 <div>
