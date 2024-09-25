@@ -26,7 +26,7 @@ const showUserPosts = (posts) => {
     const postsContainer = document.querySelector("#posts-container");
     const emptyContainer = document.querySelector(".empty");
     const paginationContainer = document.querySelector(".pagination-items")
-
+if(posts.length){
     posts.map((post) => {
         const date = realTime(post.createdAt);
   
@@ -76,6 +76,9 @@ const showUserPosts = (posts) => {
           `
         );
       });
+    }else{
+      emptyContainer.style.display = "flex";
+    }
 }
 
 
