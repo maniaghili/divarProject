@@ -41,6 +41,8 @@ const removeBookmark = (postID) => {
 
 const generatePost = (posts)=>{
     const postsContainer = document.querySelector("#posts-container");
+    const emptyContainer = document.querySelector(".empty");
+    if(posts.length){
     posts.forEach((post)=>{
         let date = realTime(post.createdAt)
           postsContainer.insertAdjacentHTML(
@@ -78,6 +80,9 @@ const generatePost = (posts)=>{
               `
                 )
          })
+        }else{
+          emptyContainer.style.display = "flex";
+        }
 }
 
 export {getBookmarks,removeBookmark,generatePost}
