@@ -8,7 +8,7 @@ const removeIcon = document.querySelector('#remove-icon')
 removeIcon.style.display = 'none'
 
 if(!getToken()){
- location.href = '/frontend/pages/posts.html'
+ location.href = '/divarProject/pages/posts.html'
 }
 const guideContainer = document.querySelector('#guide-container')
 guideContainer.style.display = 'none'
@@ -35,7 +35,7 @@ if(value.length){
         resultContainer.classList.add('active')
        result.map((res)=>{
         resultContainer.insertAdjacentHTML('beforeend',`
-            <a href="/frontend/pages/new/registerPost.html?subCategoryID=${res._id} class="search-result">
+            <a href="/divarProject/pages/new/registerPost.html?subCategoryID=${res._id} class="search-result">
             <p>${res.title}</p>
             </a>
             `)

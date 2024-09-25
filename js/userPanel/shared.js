@@ -14,7 +14,7 @@ window.addEventListener('load',()=>{
          })
          
         }else{
-            location.href = '/pages/posts.html'
+            location.href = '/divarProject/pages/posts.html'
         }
         
     })

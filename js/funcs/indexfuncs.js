@@ -34,7 +34,7 @@ const citiesParent = document.querySelector('.main__cities-list')
 
 window.redirectUsersToTheirCity = (cityName,cityId) =>{
    
-  location.href = `./pages/posts.html`
+  location.href = `/divarProject/pages/posts.html`
   setLocalStorage('cities',JSON.stringify([{name:cityName,id:cityId}]))
   
 }
@@ -44,7 +44,7 @@ const redirectUserAccordingToCookie = () => {
   //const cookieCityName = getCityCookie()
   const cookieCityName = getLocalStorage('cities')
   if(cookieCityName){
-    location.href = `pages/posts.html`
+    location.href = `/divarProject/pages/posts.html`
   }
 
   

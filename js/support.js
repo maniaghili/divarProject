@@ -19,7 +19,7 @@ getSupportArticles().then((articles)=>{
     searchResult.classList.add('active')
 
     searchResult.innerHTML = `
-    <a href="Test">
+    <a href="">
       <i class="bi bi-search"></i>
       ${event.target.value.trim()}
     </a>
@@ -31,14 +31,14 @@ getSupportArticles().then((articles)=>{
     articlesArray[0].forEach((article)=>{
       if(article.title.includes(inputValue)){
         searchResult.insertAdjacentHTML('beforeend',`
-          <a href="/frontend/pages/support/article.html?id=${article._id}">
+          <a href="/divarProject/pages/support/article.html?id=${article._id}">
                     <i class="bi bi-card-text"></i>
                     ${article.title}
                   </a>
           `)
       }else{
         searchResult.innerHTML = `
-    <a href="Test">
+    <a href="">
       <i class="bi bi-search"></i>
       ${event.target.value.trim()}
     </a>

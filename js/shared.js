@@ -210,7 +210,7 @@ globalSearchInput?.addEventListener('click',()=>{
   dropDownUL.innerHTML = ''
   manySearchesArray.forEach((word)=>{
     dropDownUL.insertAdjacentHTML('beforeend',`<li class="header__searchbar-dropdown-item">
-      <a onclick="mostSearchClickHandler('${word}')" href="#" class="header__searchbar-dropdown-link">
+      <a onclick="mostSearchClickHandler('${word}')" class="header__searchbar-dropdown-link">
         ${word}
       </a>
     </li>

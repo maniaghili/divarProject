@@ -265,7 +265,7 @@ const showPanelLinks = async () => {
           `
               <li class="header__left-dropdown-item header_dropdown-item_account">
                 <a
-                  href="/pages/userPanel/posts.html"
+                  href="/divarProject/pages/userPanel/posts.html"
                   class="header__left-dropdown-link login_dropdown_link"
                 >
                   <i class="header__left-dropdown-icon bi bi-box-arrow-in-left"></i>
@@ -276,19 +276,19 @@ const showPanelLinks = async () => {
                 </a>
               </li>
               <li class="header__left-dropdown-item">
-                <a class="header__left-dropdown-link" href="/pages/userPanel/verify.html">
+                <a class="header__left-dropdown-link" href="/divarProject/pages/userPanel/verify.html">
                   <i class="header__left-dropdown-icon bi bi-bookmark"></i>
                   تایید هویت
                 </a>
               </li>
               <li class="header__left-dropdown-item">
-                <a class="header__left-dropdown-link" href="/pages/userPanel/bookmarks.html">
+                <a class="header__left-dropdown-link" href="/divarProject/pages/userPanel/bookmarks.html">
                   <i class="header__left-dropdown-icon bi bi-bookmark"></i>
                   نشان ها
                 </a>
               </li>
               <li class="header__left-dropdown-item">
-                <a class="header__left-dropdown-link" href="/pages/userPanel/notes.html">
+                <a class="header__left-dropdown-link" href="/divarProject/pages/userPanel/notes.html">
                   <i class="header__left-dropdown-icon bi bi-journal"></i>
                   یادداشت ها
                 </a>

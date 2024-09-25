@@ -7,7 +7,7 @@ getUserPosts().then((posts)=>{
     console.log(posts);
     
     showUserPosts(posts.posts)
-    pagination("/pages/userPanel/posts.html",posts.pagination.totalPosts,2)
+    pagination("/divarProject/pages/userPanel/posts.html",posts.pagination.totalPosts,2)
     
 })
 })
