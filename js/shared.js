@@ -203,15 +203,20 @@ globalSearchInput?.addEventListener('click',()=>{
   showModal('header__searchbar-dropdown',
     `header__searchbar-dropdown--active`
   )
+
+  
+
   const dropDownUL = document.querySelector('.header__searchbar-dropdown-list')
+  dropDownUL.innerHTML = ''
   manySearchesArray.forEach((word)=>{
-    dropDownUL.insertAdjacentHTML('beforeend',`
-        <li class="header__searchbar-dropdown-item">
-        <a class="header__searchbar-dropdown-item">${word}</a>
-        </li>
+    dropDownUL.insertAdjacentHTML('beforeend',`<li class="header__searchbar-dropdown-item">
+      <a onclick="mostSearchClickHandler('${word}')" href="#" class="header__searchbar-dropdown-link">
+        ${word}
+      </a>
+    </li>
         `)
   })
-})
+},)
 
 searchbarModalOverlay?.addEventListener('click',()=>{
     hideModal('header__searchbar-dropdown',
@@ -241,3 +246,9 @@ cityModalClose?.addEventListener('click',(e)=>{
     cancelModalbuttons()
 
 })
+
+const mostSearchClickHandler = (word) => {
+  setUrlParam('search',word)
+}
+
+window.mostSearchClickHandler = mostSearchClickHandler
