@@ -41,16 +41,18 @@ window.addEventListener('load',()=>{
       allPosts.data.posts.map((post)=>{
 
         modelFilter.push(post)
+      
         
       })
       
       posts = allPosts.data.posts
-     
-  })
-  let ll = showPostsWithFilter()
+      
+      let ll = showPostsWithFilter()
    showPosts(ll)
-   }
-   
+  })
+ 
+    }
+
     getPostCategories().then((cat)=>{
         showPostCategories(cat.data.categories)
     })
