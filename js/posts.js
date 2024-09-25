@@ -80,17 +80,16 @@ window.addEventListener('load',()=>{
   let postsWithFilters = posts
    
       if(justPhotoControll.checked){
-       postsWithFilters = postsWithFilters.filter((post)=> post.pics.length)
+       postsWithFilters = postsWithFilters.filter(post=> post.pics.length)
 
        }
       if(exchangeControll.checked){
-        postsWithFilters = postsWithFilters.filter((post)=> post.exchange)
+        postsWithFilters = postsWithFilters.filter(post=> post.exchange)
        }
        return postsWithFilters
   }
 
-  const showPostsWithPriceFilter = () => {
-
+  const showPostsWithPriceFilter = ()=> {
    let priceFilter = [] 
    
     if(maxPrice != 'default'){
