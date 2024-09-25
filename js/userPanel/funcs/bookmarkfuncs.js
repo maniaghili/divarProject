@@ -19,6 +19,8 @@ const getBookmarks = async () => {
 
 const removeBookmark = (postID) => {
     let allPosts = posts
+    console.log(allPosts);
+    
     
     const postsContainer = document.querySelector("#posts-container");
    fetch(`https://divarapi.liara.run/v1/bookmark/${postID}`, {
@@ -27,10 +29,11 @@ const removeBookmark = (postID) => {
       }).then((res) => {
         
         if (res.status === 200) {
-         let posts = allPosts.filter((post) => post._id !== postID);
+          console.log('SALAM');
+          allPosts = allPosts.filter((post) => post._id !== postID);
           postsContainer.innerHTML = "";
-          if (posts.length) {
-           generatePost(posts)
+          if (allPosts.length) {
+           generatePost(allPosts)
           } else {
             
             const emptyContainer = document.querySelector(".empty");
@@ -39,7 +42,7 @@ const removeBookmark = (postID) => {
         }
       });
 }
-
+window.removeBookmark = removeBookmark
 const generatePost = (posts)=>{
     const postsContainer = document.querySelector("#posts-container");
     const emptyContainer = document.querySelector(".empty");

@@ -10,7 +10,7 @@ window.addEventListener('load',async()=>{
 
 })
    
-window.removeBookmark = removeBookmark
+
 window.sharePost = async () => {
     await navigator.share();
   };
