@@ -16,8 +16,8 @@ window.addEventListener('load',()=>{
    let getAllPosts = getPosts(cityName.map((city)=>city.id).join('|'))
      let posts = ''
      let newPosts = []
-     let minPrice = 'default'
-     let maxPrice = 'default'
+     let minPrice = minPriceSelectBox.value
+     let maxPrice = maxPriceSelectBox.value
      let filtersObject = {} 
      let modelFilter = []
    if(cityName.length == 1){
@@ -29,7 +29,10 @@ window.addEventListener('load',()=>{
       })
       
       posts = allPosts.data.posts
+      
       showPosts([...posts])
+      let ll = showPostsWithFilter()
+   showPosts(ll)
   })
    }else{
    
@@ -41,24 +44,27 @@ window.addEventListener('load',()=>{
         
       })
       
+      
       posts = allPosts.data.posts
       showPosts([...posts])
   })
+  let ll = showPostsWithFilter()
+   showPosts(ll)
    }
-
+   
     getPostCategories().then((cat)=>{
         showPostCategories(cat.data.categories)
     })
     
     exchangeControll?.addEventListener('change',()=>{ 
-         newPosts = showPostsWithFilter(posts)
+         newPosts = showPostsWithFilter()
          if(newPosts){
             showPosts(newPosts)
          }
     })
 
     justPhotoControll?.addEventListener('change',()=>{
-           newPosts = showPostsWithFilter(posts)
+           newPosts = showPostsWithFilter()
            if(newPosts){
             showPosts(newPosts)
            }     
@@ -76,9 +82,9 @@ window.addEventListener('load',()=>{
    showPosts(ll)
    })
 
-   const showPostsWithFilter = (posts) => {
-  let postsWithFilters = posts
-   
+   const showPostsWithFilter = () => {
+  let postsWithFilters = showPostsWithPriceFilter()
+
       if(justPhotoControll.checked){
        postsWithFilters = postsWithFilters.filter(post=> post.pics.length)
 
@@ -86,32 +92,37 @@ window.addEventListener('load',()=>{
       if(exchangeControll.checked){
         postsWithFilters = postsWithFilters.filter(post=> post.exchange)
        }
-       return postsWithFilters
+        
+        return postsWithFilters
   }
 
-  const showPostsWithPriceFilter = ()=> {
-   let priceFilter = [] 
-   
+  const showPostsWithPriceFilter = () => {
+   let priceFilter = posts
+
     if(maxPrice != 'default'){
         if(minPrice!= 'default'){
-          priceFilter = posts.filter(post=>post.price>minPrice&&post.price<maxPrice)
-
+          priceFilter = posts.filter(post=>post.price>minPrice && post.price<maxPrice)
           return priceFilter
         }else{
            priceFilter = posts.filter(post=>post.price<maxPrice)
            return priceFilter
         }
     }else{
-       priceFilter = posts.filter(post=>post.price>minPrice)
-       console.log(priceFilter);
+      if(minPrice!= 'default'){
+        priceFilter = posts.filter(post=>post.price>minPrice)
+        return priceFilter
+      }else{
+    return priceFilter
+      }
        
-       return priceFilter
+
     }
 
     
     
   }
-
+  
+  
   
 window.sortByDynamicFilters = (event,key) => {
  let okPosts = []
