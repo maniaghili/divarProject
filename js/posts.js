@@ -44,7 +44,7 @@ window.addEventListener('load',()=>{
         
       })
       
-      
+      posts = allPosts.data.posts
      
   })
   let ll = showPostsWithFilter()
