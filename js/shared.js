@@ -197,7 +197,7 @@ globalSearchInput?.addEventListener('keyup',(event)=>{
     },)
 
 })
-const manySearchesArray = ['ماشین','ساعت','گوشی']
+const manySearchesArray = ['تبلت','کیف','ماشین','ساعت','گوشی']
 
 globalSearchInput?.addEventListener('click',()=>{
   showModal('header__searchbar-dropdown',
