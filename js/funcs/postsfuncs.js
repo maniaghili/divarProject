@@ -20,6 +20,7 @@ const getPosts = async (id) => {
 
 }
 
+
 const showPosts = (posts) => {
   const postsContainer = document.querySelector("#posts-container");
   postsContainer.innerHTML = ''

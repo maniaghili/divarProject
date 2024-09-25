@@ -81,7 +81,7 @@ window.addEventListener('load',()=>{
    showPosts(ll)
    })
 
-   const showPostsWithFilter = () => {
+   function showPostsWithFilter () {
   let postsWithFilters = showPostsWithPriceFilter()
 
       if(justPhotoControll.checked){
@@ -95,7 +95,7 @@ window.addEventListener('load',()=>{
         return postsWithFilters
   }
 
-  const showPostsWithPriceFilter = () => {
+  function showPostsWithPriceFilter() {
    let priceFilter = posts
 
     if(maxPrice != 'default'){
