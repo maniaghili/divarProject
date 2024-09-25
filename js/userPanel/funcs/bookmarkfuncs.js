@@ -19,6 +19,7 @@ const getBookmarks = async () => {
 
 const removeBookmark = (postID) => {
     let allPosts = posts
+    
     const postsContainer = document.querySelector("#posts-container");
    fetch(`https://divarapi.liara.run/v1/bookmark/${postID}`, {
         method: "DELETE",
@@ -51,7 +52,7 @@ const generatePost = (posts)=>{
                 <div class="post">
                     <div>
                         <div>
-                        <a class="title" href="/pages/post.html?id=${post._id}">${
+                        <a class="title" href="/divarProject/pages/post.html?id=${post._id}">${
                 post.title
               }</a>
                         <div>
