@@ -1,6 +1,11 @@
 import { showSubCategoryDetale,showCities,uploadImage,postMap } from "./funcs/registerPostfuncs.js";
 
 window.addEventListener('load',()=>{
+  const changeCategory = document.querySelector('#change-category')
+  changeCategory.addEventListener('click',(e)=>{
+    e.preventDefault()
+    location.href = '/divarProject/pages/new.html'
+  })
     showSubCategoryDetale();
     showCities();
     postMap();
