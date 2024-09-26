@@ -39,9 +39,8 @@ window.redirectUsersToTheirCity = (cityName,cityId) =>{
   
 }
 
-
 const redirectUserAccordingToCookie = () => {
-  //const cookieCityName = getCityCookie()
+    //const cookieCityName = getCityCookie()
   const cookieCityName = getLocalStorage('cities')
   if(cookieCityName){
     location.href = `/divarProject/pages/posts.html`
