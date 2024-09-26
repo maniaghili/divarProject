@@ -38,8 +38,9 @@ const showModalOfCities = () => {
    })
 
     headerCity?.addEventListener('click',(e)=>{
+      e.preventDefault()
       cityModalOverlay.style.display = 'block'
-        e.preventDefault()
+       selectedCities = getLocalStorage('cities')
         getModalCities().then((res)=>{
           showCitiesInModal(res.provinces)
           cityModalCities.scrollTo(0,0)
@@ -120,9 +121,8 @@ const removeCityFromModal = (id)=>{
 
 
 for (let i=0;i<selectedCities.length;i++){
-  
-  let ss = selectedCities[i].id
-  if(ss == id){
+
+  if(selectedCities[i].id== id){
     selectedCities.splice(i,1)
     showSelectedCities(selectedCities)
     
@@ -184,14 +184,14 @@ const updateModalbuttons = (allCities) => {
   if(selectedCities.length){
     deleteAllCities.addEventListener('click',(e)=>{
     e.preventDefault()
-    selectedCities = ''
+    selectedCities = []
     updateModalbuttons(selectedCities)
     getModalCities().then((city)=>{
     showCitiesInModal(city.provinces)
   })
-    setLocalStorage('cities',selectedCities)
+   
     showSelectedCities(selectedCities)
-    showCityNameOnHeader()
+   
     
     
   })
