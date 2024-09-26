@@ -17,7 +17,7 @@ const getBookmarks = async () => {
     return posts
 }
 
-const removeBookmark = (postID) => {
+ function removeBookmark(postID) {
     let allPosts = getBookmarks()
     console.log(allPosts);
     
