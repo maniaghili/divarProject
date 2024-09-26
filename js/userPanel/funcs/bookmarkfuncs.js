@@ -18,7 +18,7 @@ const getBookmarks = async () => {
 }
 
 const removeBookmark = (postID) => {
-    let allPosts = posts
+    let allPosts = getBookmarks()
     console.log(allPosts);
     
     
