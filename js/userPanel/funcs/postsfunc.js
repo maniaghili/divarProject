@@ -42,7 +42,7 @@ if(posts.length){
                   ${
                     post.pics.length
                       ? `<img src="https://divarapi.liara.run/${post.pics[0].path}" />`
-                      : `<img src="/public/images/main/noPicture.PNG" />`
+                      : `<img src="../images/main/noPicture.PNG" />`
                   }
                   <div>
                       <p class="title">${post.title}</p>
@@ -70,7 +70,7 @@ if(posts.length){
                       }
                       
                   </div>
-                  <button class="controll-btn">مدیریت اگهی</button>
+                  <button class="controll-btn"> <a href="/divarProject/pages/userPanel/posts/preview.html">مدیریت آگهی</a></button>
                   </div>
               </a>      
           `
