@@ -1,4 +1,4 @@
-import { getCityCookie,getLocalStorage,setLocalStorage } from "./util.js"
+import { getLocalStorage,setLocalStorage } from "./util.js"
 
 let gCity = ''
 
