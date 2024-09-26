@@ -35,7 +35,7 @@ const citiesParent = document.querySelector('.main__cities-list')
 window.redirectUsersToTheirCity = (cityName,cityId) =>{
    
   location.href = `/divarProject/pages/posts.html`
-  setLocalStorage('cities',JSON.stringify([{name:cityName,id:cityId}]))
+  setLocalStorage('cities',[{name:cityName,id:cityId}])
   
 }
 
