@@ -12,7 +12,7 @@
             href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
           />
           <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-        <link rel="stylesheet" href="../../bootstrap_icon/bootstraicon.css" />
+        <link rel="stylesheet" href="../../vendor/bootstrap_icon/bootstraicon.css" />
         <link rel="stylesheet" href="../../css/share.css" />
         <link rel="stylesheet" href="../../css/registerPost.css" />
         <link rel="stylesheet"
@@ -25,73 +25,35 @@
         <!--!==========================================Header==========================================!-->
         <header class="header">
             <div class="container-fluid">
-                <div class="header__wrapper">
-                    <div class="header__right">
-                          <a class="header__logo-link" href="/pages/posts.html">
-                            <img
-                                class="header__logo-img"
-                                src="/public/images/header/logo.svg"
-                                alt="logo" />
-                        </a>
-                        <button class="header__city">
-                            <i class="header__city-icon bi bi-geo-alt"></i>
-                            <span class="header__city-title">اصفهان</span>
-                        </button>
-                    </div>
-                    <div class="header__left">
-                        <a class="header__left-link" href="#">
-                            <i class="header__left-icon bi bi-person"></i>
-                            دیوار من
-                        </a>
-                        <div class="header__left-dropdown">
-                            <ul class="header__left-dropdown-list">
-                                <li class="header__left-dropdown-item">
-                                    <a class="header__left-dropdown-link"
-                                        href="#">
-                                        <i
-                                            class="header__left-dropdown-icon bi bi-box-arrow-in-left"></i>
-                                        ورود
-                                    </a>
-                                </li>
-                                <li class="header__left-dropdown-item">
-                                    <a class="header__left-dropdown-link"
-                                        href="#">
-                                        <i
-                                            class="header__left-dropdown-icon bi bi-bookmark"></i>
-                                        نشان ها
-                                    </a>
-                                </li>
-                                <li class="header__left-dropdown-item">
-                                    <a class="header__left-dropdown-link"
-                                        href="#">
-                                        <i
-                                            class="header__left-dropdown-icon bi bi-journal"></i>
-                                        یادداشت ها
-                                    </a>
-                                </li>
-                                <li class="header__left-dropdown-item">
-                                    <a class="header__left-dropdown-link"
-                                        href="#">
-                                        <i
-                                            class="header__left-dropdown-icon bi bi-clock-history"></i>
-                                        بازدید های اخیر
-                                    </a>
-                                </li>
-                                <li class="header__left-dropdown-item">
-                                    <a class="header__left-dropdown-link"
-                                        href="#">
-                                        <i
-                                            class="header__left-dropdown-icon bi bi-shop"></i>
-                                        دیوار برای کسب و کارها
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <a class="header__left-link" href="/pages/support.html"> پشتیبانی </a>
-                    </div>
+              <div class="header__wrapper">
+                <div class="header__right">
+                  <a class="header__logo-link" href="/divarProject/pages/posts.html">
+                    <img class="header__logo-img" src="./../../images/header/logo.svg"
+                      alt="logo">
+                  </a>
+                  <button class="header__city">
+                    <i class="header__city-icon bi bi-geo-alt"></i>
+                    <span class="header__city-title" id="header-city-title"></span>
+                  </button>
                 </div>
+                <div class="header__left">
+                  <div class="dropdown header_dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="header__left-icon bi bi-person"></i>
+                      دیوار من
+                    </button>
+                    <ul class="dropdown-menu header_dropdown_menu"></ul>
+      
+                  </div>
+                  <a class="header__left-link" href="/divarProject/pages/support.html">
+                    پشتیبانی
+                  </a>
+                  <button class="header__left-btn ">ثبت آگهی</button>
+                </div>
+              </div>
             </div>
-        </header>
+          </header>
         <!--!==========================================End Header==========================================!-->
 
         <!--!===========================================Main==========================================!-->
@@ -198,165 +160,39 @@
         <!--!==========================================End Main==========================================!-->
 
         <!--!==========================================city Modal==========================================!-->
-        <section class="city-modal">
-            <div class="city-modal__header">
+        <div class="city-modal" id="city-modal">
+            <div class="city-modal__overlay"></div>
+            <section>
+              <div class="city-modal__header">
                 <div class="city-modal__header-wrapper">
-                    <div class="city-modal__title-wrapper">
-                        <span class="city-modal__title">انتخاب شهر</span>
-                        <button class="city-modal__btn">حذف همه</button>
-                    </div>
-                    <div class="city-modal__selected">
-                        <div class="city-modal__selected-item">
-                            <span class="city-modal__selected-text">اصفهان</span>
-                            <button class="city-modal__selected-btn">
-                                <i class="city-modal__selected-icon bi bi-x"></i>
-                            </button>
-                        </div>
-                        <div class="city-modal__selected-item">
-                            <span class="city-modal__selected-text">اصفهان</span>
-                            <button class="city-modal__selected-btn">
-                                <i class="city-modal__selected-icon bi bi-x"></i>
-                            </button>
-                        </div>
-                        <div class="city-modal__selected-item">
-                            <span class="city-modal__selected-text">اصفهان</span>
-                            <button class="city-modal__selected-btn">
-                                <i class="city-modal__selected-icon bi bi-x"></i>
-                            </button>
-                        </div>
-                        <div class="city-modal__selected-item">
-                            <span class="city-modal__selected-text">اصفهان</span>
-                            <button class="city-modal__selected-btn">
-                                <i class="city-modal__selected-icon bi bi-x"></i>
-                            </button>
-                        </div>
-                        <div class="city-modal__selected-item">
-                            <span class="city-modal__selected-text">اصفهان</span>
-                            <button class="city-modal__selected-btn">
-                                <i class="city-modal__selected-icon bi bi-x"></i>
-                            </button>
-                        </div>
-                        <div class="city-modal__selected-item">
-                            <span class="city-modal__selected-text">اصفهان</span>
-                            <button class="city-modal__selected-btn">
-                                <i class="city-modal__selected-icon bi bi-x"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="city-modal__searchbar">
-                        <form class="city-modal__form">
-                            <input
-                                class="city-modal__input"
-                                type="text"
-                                placeholder="جستجو در شهرها" />
-                            <i class="city-modal__icon bi bi-search"></i>
-                        </form>
-                    </div>
+                  <div class="city-modal__title-wrapper">
+                    <span class="city-modal__title">انتخاب شهر</span>
+                    <button id="delete-all-cities"
+                      class="city-modal__btn delete_cities">حذف همه</button>
+                  </div>
+                  <p id="city_modal_error">حداقل یک شهر را انتخاب کنید.</p>
+                  <div class="city-modal__selected" id="city-selected"></div>
+                  <div class="city-modal__searchbar">
+                    <form class="city-modal__form">
+                      <input class="city-modal__input" id="city-modal-search-input"
+                        type="text" placeholder="جستجو در شهرها">
+                      <i class="city-modal__icon bi bi-search"></i>
+                    </form>
+                  </div>
                 </div>
-            </div>
-            <div class="city-modal__cities">
-                <!-- <ul class="city-modal__cities-list">
-                <li class="city-modal__cities-item">
-                    اصفهان
-                    <i class="city-modal__cities-icon bi bi-chevron-left"></i>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                    <i class="city-modal__cities-icon bi bi-chevron-left"></i>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                    <i class="city-modal__cities-icon bi bi-chevron-left"></i>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                    <i class="city-modal__cities-icon bi bi-chevron-left"></i>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                    <i class="city-modal__cities-icon bi bi-chevron-left"></i>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                    <i class="city-modal__cities-icon bi bi-chevron-left"></i>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                    <i class="city-modal__cities-icon bi bi-chevron-left"></i>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                    <i class="city-modal__cities-icon bi bi-chevron-left"></i>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                    <i class="city-modal__cities-icon bi bi-chevron-left"></i>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                    <i class="city-modal__cities-icon bi bi-chevron-left"></i>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                    <i class="city-modal__cities-icon bi bi-chevron-left"></i>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                    <i class="city-modal__cities-icon bi bi-chevron-left"></i>
-                </li>
-            </ul> -->
-                <!-- <ul class="city-modal__cities-list">
-                <li class="city-modal__cities-item">
-                   <i class="city-modal__cities-arrow-icon bi bi-arrow-right"></i> 
-                    همه شهر ها
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                   <input class="city-modal__cities-checkbox" type="checkbox"></input>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                   <input class="city-modal__cities-checkbox" type="checkbox"></input>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                   <input class="city-modal__cities-checkbox" type="checkbox"></input>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                   <input class="city-modal__cities-checkbox" type="checkbox"></input>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                   <input class="city-modal__cities-checkbox" type="checkbox"></input>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                   <input class="city-modal__cities-checkbox" type="checkbox"></input>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                   <input class="city-modal__cities-checkbox" type="checkbox"></input>
-                </li>
-                <li class="city-modal__cities-item">
-                    اصفهان
-                   <input class="city-modal__cities-checkbox" type="checkbox"></input>
-                </li>
-            </ul> -->
-            </div>
-            <div class="city-modal__footer">
+              </div>
+              <div class="city-modal__cities">
+                <ul class="city-modal__cities-list" id="city_modal_list"></ul>
+      
+              </div>
+              <div class="city-modal__footer">
                 <div class="city-modal__footer-wrapper">
-                    <button
-                        class="city-modal__btn-footer city-modal__close">
-                        انصراف
-                    </button>
-                    <button
-                        class="city-modal__btn-footer city-modal__accept--active">
-                        تایید
-                    </button>
+                  <button class="city-modal__btn-footer city-modal__close" >انصراف</button>
+                  <button class="city-modal__btn-footer city-modal__accept " id="city-modal__accept">تایید</button>
                 </div>
-            </div>
-        </section>
+              </div>
+            </section>
+          </div>
         <!--!==========================================End city Modal==========================================!-->
 
         <!--!==========================================Overlay Searchbar==========================================!-->

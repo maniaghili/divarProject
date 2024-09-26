@@ -6,9 +6,9 @@ window.addEventListener('load',()=>{
     isLoginn().then(user=>{
         if(user){
           const sidebarPhoneNumber = document.querySelector('#sidebar-phone-number')
-         sidebarPhoneNumber.innerHTML = user.data.user.username
+         sidebarPhoneNumber?sidebarPhoneNumber.innerHTML = user.data.user.username:''
          const logoutBtn = document.querySelector('#logout-btn')
-         logoutBtn.addEventListener('click',(e)=>{
+         logoutBtn?.addEventListener('click',(e)=>{
             e.preventDefault()
          logOut()
          })

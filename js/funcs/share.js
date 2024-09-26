@@ -252,9 +252,10 @@ const getToken = () => {
 
 const showPanelLinks = async () => {
   const dropDown = document.querySelector(".header_dropdown_menu");
+  
   const userLogin = await isLoginn();
   const loginModal = document.querySelector('#login-modal')
-  dropDown?dropDown.innerHTML = "":''
+ dropDown.innerHTML = ""
 
   if (dropDown) {
     if (userLogin) {
@@ -344,7 +345,10 @@ const showPanelLinks = async () => {
     
   }
  
-}}
+
+}
+
+}
 
 
 export {globalSearchInfos,
