@@ -18,7 +18,10 @@ const getBookmarks = async () => {
 }
 
  function removeBookmark(postID) {
-    let allPosts = getBookmarks()
+    let allPosts = null
+      getBookmarks().then(all){
+        allPosts = all
+      }
     console.log(allPosts);
     
     
@@ -29,7 +32,7 @@ const getBookmarks = async () => {
       }).then((res) => {
         
         if (res.status === 200) {
-          console.log('SALAM');
+         
           allPosts = allPosts.filter((post) => post._id !== postID);
           postsContainer.innerHTML = "";
           if (allPosts.length) {
