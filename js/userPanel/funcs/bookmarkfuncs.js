@@ -20,7 +20,7 @@ const getBookmarks = async () => {
  function removeBookmark(postID) {
     let allPosts = null
       getBookmarks().then(all){
-        allPosts = all
+        allPosts = all.posts
       }
     console.log(allPosts);
     
