@@ -49,7 +49,7 @@ window.removeBookmark = removeBookmark
 const generatePost = (posts)=>{
     const postsContainer = document.querySelector("#posts-container");
     const emptyContainer = document.querySelector(".empty");
-    if(posts.length){
+    if(posts){
     posts.forEach((post)=>{
         let date = realTime(post.createdAt)
           postsContainer.insertAdjacentHTML(
