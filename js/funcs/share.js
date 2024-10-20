@@ -306,6 +306,7 @@ const showPanelLinks = async () => {
   logoutLink.addEventListener('click',()=>{
  
     logOut()
+    //location.href = '/divarProject/pages/index.html'
   })
       });
     } else {
