@@ -9,9 +9,6 @@ window.addEventListener('load',()=>{
     const minPriceSelectBox = document.querySelector('#min-price-selectbox')
     const maxPriceSelectBox = document.querySelector('#max-price-selectbox')
 
-
-
-
     let cityName = getLocalStorage('cities')
    let getAllPosts = getPosts(cityName.map((city)=>city.id).join('|'))
      let posts = ''
