@@ -3,7 +3,6 @@ import { getPostDetales,showPostDetales,saveRecentSeen } from "./funcs/postDetal
 
 const loadingContainer = document.querySelector('#loading-container')
 
-
 window.addEventListener('load',()=>{
 let postID = getUrlParam('id')
 getPostDetales(postID).then((res)=>{
