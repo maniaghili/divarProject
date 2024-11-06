@@ -8,7 +8,7 @@ window.addEventListener('load',()=>{
     const justPhotoControll = document.querySelector('#just_photo_controll')
     const minPriceSelectBox = document.querySelector('#min-price-selectbox')
     const maxPriceSelectBox = document.querySelector('#max-price-selectbox')
-
+alert('این پروژه ریسپانسیو نیست و برای تجربه بهتر با ویندوز وارد شوید')
     let cityName = getLocalStorage('cities')
    let getAllPosts = getPosts(cityName.map((city)=>city.id).join('|'))
      let posts = ''
