@@ -1,4 +1,4 @@
-import { getToken } from "./funcs/share.js"
+ import { getToken } from "./funcs/share.js"
 import { getCategories, } from "./funcs/newfuncs.js"
 
 
