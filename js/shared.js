@@ -1,4 +1,4 @@
-import { globalSearchInfos ,
+ import { globalSearchInfos ,
     showCityNameOnHeader,
     showModalOfCities,
     ApplyCityChanges,
